@@ -1,2 +1,15 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<h1>Rent a friend</h1>
+<p>Match up for your next event</p>
+<%= form_with model: @user do |form| %>
+<%= form.label :location,"Location" %>
+<%= form.text_field :location, placeholder: 'tap your city' %>
+<br>
+<%= form.select :age, ['18-25', '25-40', '40-60', '60<...'] %>
+<br>
+<%= form.select :event, Occasion.all.map{|o| o[:name]} %>
+<br>
+<%= form.select :gender, ['male', 'female'] %>
+<br>
+<%= form.date_select :star_date %>
+<%= form.submit 'Submit' %>
+<% end %>
