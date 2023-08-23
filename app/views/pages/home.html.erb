@@ -1,15 +1,28 @@
-<h1>Rent a friend</h1>
+<h1>Rent a Friend</h1>
 <p>Match up for your next event</p>
-<%= form_with model: @user do |form| %>
-<%= form.label :location,"Location" %>
-<%= form.text_field :location, placeholder: 'tap your city' %>
-<br>
-<%= form.select :age, ['18-25', '25-40', '40-60', '60<...'] %>
-<br>
-<%= form.select :event, Occasion.all.map{|o| o[:name]} %>
-<br>
-<%= form.select :gender, ['male', 'female'] %>
-<br>
-<%= form.date_select :star_date %>
-<%= form.submit 'Submit' %>
-<% end %>
+
+<%#= form_with model: @user, url: users_path, method: :get do |form| %>
+  <%#= form.label :location, "Location" %>
+  <%#= form.text_field :location, placeholder: 'Enter your city' %>
+  <br>
+
+  <%#= form.label :age, "Age" %>
+  <%#= form.select :age, ['18-25', '25-40', '40-60', '60+'] %>
+  <br>
+
+  <%#= form.label :event, "Event" %>
+  <%#= form.select :occasion, Occasion.all.map { |o| o.name } %>
+  <br>
+
+  <%#= form.label :gender, "Gender" %>
+  <%#= form.select :gender, ['male', 'female'] %>
+  <br>
+
+  <%#= form.label :start_date, "Start Date" %>
+  <%#= form.date_select :start_date %>
+  <br>
+
+  <%#= form.submit 'Submit' %>
+<%# end %>
+
+<%= link_to "filter user", users_path %>
