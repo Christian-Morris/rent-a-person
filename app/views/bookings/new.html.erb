@@ -1,0 +1,9 @@
+<h3>Set your new booking for <%= @escort.full_name %></h3>
+
+<%= simple_form_for [@escort, @booking] do |f| %>
+  <%= f.input :location %>
+  <%= f.input :start_date %>
+  <%= f.input :end_date %>
+  <%= f.association :occasion, collection: @escort.occasions %>
+  <%= f.submit %>
+<% end %>
