@@ -12,16 +12,15 @@
         <br>
         <%= form.select :gender, ['male', 'female'] , {include_blank: "Gender"}, { class: "w-50 p-3" } %>
         <br>
-
-        <label for="start_date"></label>
-        <input class="w-50 p-3" type="date" id="start_date" name="start_date">
-        <br>
+        <div class="mb-2">
+          <%= form.date_field :opening_date, data: { controller: "datepicker" } %>
+          <%= form.date_field :end_date, data: { controller: "datepicker" } %>
+        </div>
 
         <%= form.submit 'Submit', { class: "btn btn-primary btn-lg btn-block" } %>
-      <% end %>
 
+      <% end %>
     </div>
   </div>
 
-  <%= link_to "filter user", users_path %>
 </div>
