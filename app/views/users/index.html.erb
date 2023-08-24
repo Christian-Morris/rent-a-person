@@ -1,10 +1,13 @@
-
+required = [:age, :location, :gender, :event]
 <h3>Select your companion for tonight</h3>
 
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-sm-8">
+
+    required = [:age, :location, :gender, :event]
       <div id="users">
+
   <% if @users.any? %>
   <% @users.each do |user| %>
     <p><%= link_to user.full_name, user_path(user) %></p>
