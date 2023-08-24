@@ -25,12 +25,18 @@ class BookingsController < ApplicationController
 
   def show
     @booking = Booking.find(params[:id])
+  end
 
+  def update_status
+    @booking = Booking.find(params[:id])
+    @booking.status = params[:status]
+    @booking.save
+    redirect_to bookings_path(tab: "engagements")
   end
 end
 
 private
 
   def booking_params
-    params.require(:booking).permit(:location, :start_date, :end_date, :occasion_id)
+    params.require(:booking).permit(:location, :start_date, :end_date, :occasion_id, :status)
   end
