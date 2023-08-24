@@ -33,10 +33,10 @@ class BookingsController < ApplicationController
     @booking.save
     redirect_to bookings_path(tab: "engagements")
   end
-end
 
-private
+  private
 
   def booking_params
     params.require(:booking).permit(:location, :start_date, :end_date, :occasion_id, :status)
   end
+end
