@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_21_100829) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_24_072656) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -32,6 +32,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_21_100829) do
     t.string "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "status", default: "pending"
     t.index ["escort_id"], name: "index_bookings_on_escort_id"
     t.index ["occasion_id"], name: "index_bookings_on_occasion_id"
     t.index ["renter_id"], name: "index_bookings_on_renter_id"
