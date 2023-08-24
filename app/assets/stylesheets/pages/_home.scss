@@ -1,13 +1,13 @@
 // Specific CSS for your home-page
-// .container {
-//   border-radius: 10px;
-//   padding: 10px;
-//   text-align: center;
-//   color: white;
-//   margin: auto;
-//   width: 20%;
-//   // height: 30px;
-// }
+.container {
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  color: white;
+  margin: auto;
+  height: 50%;
+  // height: 30px;
+}
 .filter {
   background-color: rgb(39, 36, 36);
   margin-bottom: 20px;
@@ -16,14 +16,27 @@
   border: solid 2px whitesmoke;
 }
 
-.filter div {
-  width: 20%;
-}
-
-
 .bg-image {
   background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbJBtapFEkjdynpnq22aaQZkNxWgEgmuIWCg&usqp=CAU);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+}
+
+.btn {
+  border-radius: 10px;
+  width: 50%;
+}
+
+.filter-form {
+  margin: 50px;
+}
+.filter-form select {
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.w-50 {
+  border-radius: 10px;
+  margin-bottom: 10px;
 }
