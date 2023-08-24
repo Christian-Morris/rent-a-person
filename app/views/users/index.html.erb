@@ -1,0 +1,25 @@
+<h3>Select your companion for tonight</h3>
+
+      <div id="users">
+        <% if @users.any? %>
+          <ul>
+            <% if params.present? && params[:user].present? %>
+              <li>Location: <%= params[:user][:location] %></li>
+              <li>Age: <%= params[:user][:age] %></li>
+              <li>Gender: <%= params[:user][:gender] %></li>
+              <li>Event: <%= params[:user][:event] %></li>
+              <li>Start Date: <%= params[:user][:start_date] %></li>
+            <% end %>
+          </ul>
+          <ul>
+            <% @users.each do |user| %>
+              <p><%= link_to user.full_name, user_path(user) %></p>
+              <li>Age: <%= user.age %></li>
+              <li>Gender: <%= user.gender %></li>
+              <li>Location: <%= user.location %></li>
+            <% end %>
+          </ul>
+        <% else %>
+          <em>Sorry, no match.</em>
+        <% end %>
+      </div>

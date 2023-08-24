@@ -1,0 +1,21 @@
+<%= link_to "Home Page", users_path %>
+
+<div class="cards">
+  <h3><%= @user.full_name %></h3>
+    <div class="card-escort">
+      <img src="" />
+      <div class="user-infos">
+          <p><%= @user.age %></p>
+          <p><%= @user.location %></p>
+      </div>
+      <h2 class="card-review">
+            <% @user.reviews.each do |review| %>
+            <%= review.rating %>
+            <% end %>
+      </h2>
+</div>
+
+<div>
+
+
+<%= link_to "Book your companion", new_user_booking_path(@user) %>
