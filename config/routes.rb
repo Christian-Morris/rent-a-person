@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get "/", to: "pages#home"
   post "/", to: "users#index"
+  # get '/users/search', to: 'users#search', as: 'search_users'
   devise_for :users
   # root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

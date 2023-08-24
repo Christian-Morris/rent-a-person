@@ -1,28 +1,41 @@
-<h1>Rent a Friend</h1>
-<p>Match up for your next event</p>
+<div class="bg-image vh-100">
+  <div>
+    <h1>Rent a Friend</h1>
+    <p>Match up for your next event</p>
+  </div>
 
-<%#= form_with model: @user, url: users_path, method: :get do |form| %>
-  <%#= form.label :location, "Location" %>
-  <%#= form.text_field :location, placeholder: 'Enter your city' %>
-  <br>
+  <div class="container">
+    <div class="filter">
+      <%= form_with model: @user, url: users_path, method: :get do |form| %>
 
-  <%#= form.label :age, "Age" %>
-  <%#= form.select :age, ['18-25', '25-40', '40-60', '60+'] %>
-  <br>
+        <div>
+          <%= form.label :location, "Location" %>
+          <%= form.select :location, ["avb", "asasa"]%>
+          <br>
+        </div>
 
-  <%#= form.label :event, "Event" %>
-  <%#= form.select :occasion, Occasion.all.map { |o| o.name } %>
-  <br>
+        <div>
+        <%= form.label :age, "Age" %>
+        <%= form.select :age, ['18-25', '25-40', '40-60', '60+'] %>
+        <br>
+        </div>
 
-  <%#= form.label :gender, "Gender" %>
-  <%#= form.select :gender, ['male', 'female'] %>
-  <br>
+        <%= form.label :event, "Event" %>
+        <%= form.select :occasion, Occasion.all.map { |o| o.name } %>
+        <br>
 
-  <%#= form.label :start_date, "Start Date" %>
-  <%#= form.date_select :start_date %>
-  <br>
+        <%= form.label :gender, "Gender" %>
+        <%= form.select :gender, ['male', 'female'] %>
+        <br>
 
-  <%#= form.submit 'Submit' %>
-<%# end %>
+        <label for="start_date">Start Date</label>
+        <input type="date" id="start_date" name="start_date">
+        <br>
 
-<%= link_to "filter user", users_path %>
+        <%= form.submit 'Submit' %>
+      <% end %>
+    </div>
+  </div>
+
+  <%= link_to "filter user", users_path %>
+</div>
