@@ -10,7 +10,7 @@
 
         <div>
           <%= form.label :location, "Location" %>
-          <%= form.select :location, ["avb", "asasa"]%>
+          <%= form.select :location, User.all.map {|u| u.location}%>
           <br>
         </div>
 
