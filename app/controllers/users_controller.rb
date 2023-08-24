@@ -1,8 +1,18 @@
 class UsersController < ApplicationController
   def index
-    if params.present? && params[:user].present?
-      @users = User.where(user_params)
+    @users = UserOccasion.where(occasion: Occasion.find_by(name: params[:user][:occasion])).map {|o| o.user}
+    age_range = params[:user][:age].split("-")
+    if age_range[1].to_i.positive?
+      @users = User.where(age: age_range[0].to_i..age_range[1].to_i)
+      @users = @users.select { |u| u.age >= age_range[0].to_i }
+      @users = @users.select { |u| u.age <= age_range[1].to_i }
     else
+      @users = @users.select { |u| u.age >= age_range[0].to_i }
+    end
+    @users = @users.select { |u| u.location == params[:user][:location] }
+    @users = @users.select { |u| u.gender == params[:user][:gender] }
+
+    if @users == []
       @users = User.all
     end
   end
@@ -10,33 +20,6 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
   end
-
-  # def search
-
-  #   @users = User.all
-
-  #   if params[:location].present?
-  #     @users = @users.where(location: params[:location])
-  #   end
-
-  #   if params[:age].present?
-  #     @users = @users.where(age: params[:age])
-  #   end
-
-  #   if params[:occasion].present?
-  #     @users = @users.joins(:occasions).where('occasions.name' => params[:occasion])
-  #   end
-
-  #   if params[:gender].present?
-  #     @users = @users.where(gender: params[:gender])
-  #   end
-
-  #   if params[:start_date].present?
-  #     @users = @users.where('start_date >= ?', params[:start_date])
-  #   end
-
-  #   render 'index'
-  # end
 
   def user_params
     params.require(:user).permit(:location, :age, :event, :gender, :start_date)

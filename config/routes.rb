@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  get "/profile", to: "pages#profile"
   resources :users do
     resources :bookings, only: [:new, :create]
   end

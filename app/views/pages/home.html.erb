@@ -4,7 +4,7 @@
     <div class="filter-form">
     <h3>Match up for your next event</h3>
       <%= form_with model: @user, url: users_path, method: :get do |form| %>
-        <%= form.select :location, ["bali", "UK", "Denmark", "Anywhere"], {include_blank: "Location"}, { class: "w-50 p-3" } %>
+        <%= form.select :location, User.all.map {|u| u.location}, {include_blank: "Location"}, { class: "w-50 p-3" } %>
         <br>
         <%= form.select :age, ['18-25', '25-40', '40-60', '60+', "All ages"] , {include_blank: "Age"}, { class: "w-50 p-3" } %>
         <br>

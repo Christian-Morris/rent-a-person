@@ -16,10 +16,16 @@ class BookingsController < ApplicationController
     @booking.escort = @escort
     @booking.renter = current_user
     if @booking.save
-      redirect_to bookings_path
+      @booking = Booking.find(@booking.id)
+      redirect_to booking_path(@booking)
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def show
+    @booking = Booking.find(params[:id])
+
   end
 end
 
