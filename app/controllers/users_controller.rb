@@ -20,13 +20,10 @@ class UsersController < ApplicationController
     unless params[:user][:gender] == ""
       @users = @users.select { |u| u.gender == params[:user][:gender] }
     end
-
-    if params[:user][:opening_date] && params[:user][:end_date]
-      @users = @users.reject do |user|
-        user.bookings.where("start_date >= ? AND end_date <= ?", params[:user][:opening_date], params[:user][:end_date])
-      end
+    unless params[:user][:date] == ""
+      @users = @users.reject { |u| u.bookings.find { |d| d.date.to_s == params[:user][:date] } }
+      @users = @users.reject { |u| u.engagements.find { |d| d.date.to_s == params[:user][:date] } }
     end
-
 
     if @users == []
       flash.alert = 'No users match your search query => showing all users'

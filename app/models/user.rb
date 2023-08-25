@@ -4,7 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
         :recoverable, :rememberable, :validatable
 
-  has_many :availabilities
   has_many :user_occasions
   has_many :occasions, through: :user_occasions
   # This allows us to check the bookings the user has booked (not those they have been booked to escort on)
