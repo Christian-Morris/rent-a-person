@@ -19,9 +19,6 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  position: fixed;
-  width: 100%;
-  overflow: hidden;
 }
 
 .btn {
@@ -56,3 +53,7 @@
 }
 
 // https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbJBtapFEkjdynpnq22aaQZkNxWgEgmuIWCg&usqp=CAU
+.nav-link {
+  font-family: 'Cinzel Decorative', cursive;
+  color: #E9E9E9;
+}

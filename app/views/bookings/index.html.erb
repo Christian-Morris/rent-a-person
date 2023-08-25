@@ -17,7 +17,7 @@
       <% current_user.bookings.each do |booking| %>
         <% if booking.status == "approved" %>
           <li>
-            Location: <%= booking.location %> - <%= booking.start_date %> => <%= booking.end_date %> <br>
+            Location: <%= booking.location %> - <%= booking.date %> <br>
             <strong><%= booking.escort.full_name %></strong> to accompany you for a <%= booking.occasion.name %>. <br>
             Status: <%= booking.status %>
           </li>
@@ -30,7 +30,7 @@
       <% current_user.bookings.each do |booking| %>
         <% if booking.status == "pending" %>
           <li>
-            Location: <%= booking.location %> - <%= booking.start_date %> => <%= booking.end_date %> <br>
+            Location: <%= booking.location %> - <%= booking.date %><br>
             <strong><%= booking.escort.full_name %></strong> to accompany you for a <%= booking.occasion.name %>. <br>
             Status: <%= booking.status %>
           </li>
@@ -43,7 +43,7 @@
       <% current_user.bookings.each do |booking| %>
         <% if booking.status == "rejected" %>
           <li>
-            Location: <%= booking.location %> - <%= booking.start_date %> => <%= booking.end_date %> <br>
+            Location: <%= booking.location %> - <%= booking.date %><br>
             <strong><%= booking.escort.full_name %></strong> to accompany you for a <%= booking.occasion.name %>. <br>
             Status: <%= booking.status %>
           </li>
@@ -60,7 +60,7 @@
       <% current_user.engagements.each do |booking| %>
         <% if booking.status == "approved" %>
           <li>
-            Location: <%= booking.location %> - <%= booking.start_date %> => <%= booking.end_date %> <br>
+            Location: <%= booking.location %> - <%= booking.date %><br>
             <strong>You</strong> are accompanying <strong><%= booking.renter.full_name %></strong> to a <%= booking.occasion.name %>. <br>
             Status: <%= booking.status %>
           </li>
@@ -73,7 +73,7 @@
       <% current_user.engagements.each do |booking| %>
         <% if booking.status == "pending" %>
           <li>
-            Location: <%= booking.location %> - <%= booking.start_date %> => <%= booking.end_date %> <br>
+            Location: <%= booking.location %> - <%= booking.date %><br>
             <strong>You</strong> are accompanying <strong><%= booking.renter.full_name %></strong> to a <%= booking.occasion.name %>. <br>
             Status: <%= booking.status %>
           </li>
@@ -88,7 +88,7 @@
       <% current_user.engagements.each do |booking| %>
         <% if booking.status == "rejected" %>
           <li>
-            Location: <%= booking.location %> - <%= booking.start_date %> => <%= booking.end_date %> <br>
+            Location: <%= booking.location %> - <%= booking.date %><br>
             <strong>You</strong> are accompanying <strong><%= booking.renter.full_name %></strong> to a <%= booking.occasion.name %>. <br>
             Status: <%= booking.status %>
           </li>

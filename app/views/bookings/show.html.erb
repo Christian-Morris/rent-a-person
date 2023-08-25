@@ -5,7 +5,7 @@
     <div class="card-body">
       <h5 class="card-title">Booking is ✅</h5>
       <p class="card-text"><small class="text-body-secondary">Here are the details</small></p>
-      <p class="card-text" style="text-transform:capitalize;"><%= @booking.occasion.name %> with <%= User.find(@booking.escort_id).full_name %> in <%= @booking.location %> <br> date: <%= @booking.start_date %><br>
+      <p class="card-text" style="text-transform:capitalize;"><%= @booking.occasion.name %> with <%= User.find(@booking.escort_id).full_name %> in <%= @booking.location %> <br> date: <%= @booking.date %><br>
       Enjoy <%= User.find(@booking.renter_id).full_name %> !</p>
     </div>
 
