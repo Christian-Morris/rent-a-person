@@ -2,7 +2,7 @@
 <div class="bt vh-100">
 <div class="container-sm row justify-content-center">
   <div class="card-booking" style="width: 40%;">
-    <div class="card-body">
+    <div class="card-body card_bg_opacity card">
       <h5 class="card-title-booking">Booking is ✅</h5>
       <p class="card-text"><small class="text-body-two">Here are the details</small></p>
       <p class="card-text" style="text-transform:capitalize;"><%= @booking.occasion.name %> with <%= User.find(@booking.escort_id).full_name %> in <%= @booking.location %> <br> date: <%= @booking.date %><br>
