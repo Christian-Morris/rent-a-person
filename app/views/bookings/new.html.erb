@@ -1,9 +1,19 @@
-<h3>Set your new booking for <%= @escort.full_name %></h3>
 
-<%= simple_form_for [@escort, @booking] do |f| %>
-  <%= f.input :location %>
-  <%= f.input :start_date %>
-  <%= f.input :end_date %>
-  <%= f.association :occasion, collection: @escort.occasions %>
-  <%= f.submit %>
-<% end %>
+<div class="bg vh-100">
+  <div class="container">
+    <div class="filter d-flex justify-content-center">
+    <div class="filter-form w-50 p-3">
+    <div class="book">
+  <h3 style="color: black;"> Book <%= @escort.full_name %></h3>
+  </div>
+    <%= simple_form_for [@escort, @booking] do |f| %>
+    <%= f.input :location, :placeholder => 'Location', label: false%>
+    <%= f.input :start_date, :placeholder => 'Date', label: false, html5: true  %>
+    <%= f.association :occasion, collection: @escort.occasions, label: false, :placeholder => 'Date' %>
+    <div class="work">
+    <%= f.button :submit, :placeholder => 'Book' %>
+    </div>
+      <% end %>
+    </div>
+  </div>
+</div>

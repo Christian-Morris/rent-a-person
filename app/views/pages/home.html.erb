@@ -14,13 +14,12 @@
         <br>
         <div class="mb-2">
           <%= form.date_field :opening_date, data: { controller: "datepicker" } %>
-          <%= form.date_field :end_date, data: { controller: "datepicker" } %>
         </div>
 
-        <%= form.submit 'Connect', { class: "btn btn-primary btn-lg btn-block"  } %>
-
+        <div>
+        <%= form.submit 'Connect', { class: "btn btn-primary btn-lg btn-block" } %>
+        </div>
       <% end %>
     </div>
   </div>
-
 </div>
