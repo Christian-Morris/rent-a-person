@@ -1,8 +1,8 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
     <%= link_to "/", class: "navbar-brand" do %>
-      <%= image_tag "https://icon-library.com/images/person-icon-silhouette-png/person-icon-silhouette-png-4.jpg" %>
-      <h3>Rent a Friend</h3>
+      <%# <%= image_tag "https://cdn.vectorstock.com/i/1000x1000/91/53/friends-or-partners-logo-element-business-vector-5159153.webp" %>
+      <h3 class="navbar-text">Rent a Friend</h3>
     <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -14,7 +14,7 @@
         <% if user_signed_in? %>
           <li class="nav-item dropdown">
           <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar", alt: "dropdown menu" %>
+            <%= image_tag "https://img.freepik.com/premium-photo/man-with-suit-tie-that-says-he-s-smiling_745528-2580.jpg?w=996", class: "avatar", alt: "dropdown menu" %>
           </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Bookings", bookings_path, class: "dropdown-item" %>

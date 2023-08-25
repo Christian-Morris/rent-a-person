@@ -1,6 +1,8 @@
+
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background:rgb(10, 10, 43);
+  border-bottom: solid 0.2px whitesmoke;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -11,9 +13,19 @@
   width: 40px;
 }
 
+.avatar {
+  margin-right: 15px;
+}
+
 .navbar-brand {
   display: flex;
   flex-direction: row;
   align-items: baseline;
   padding-right: 10px;
+}
+
+.navbar-text {
+  font-family: 'Cinzel Decorative', cursive;
+  color: #E9E9E9;
+  margin-left: 15px;
 }
