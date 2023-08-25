@@ -14,13 +14,13 @@
 </ul>
 <div class="tab-content" id="myTabContent">
   <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
-  <%= simple_form_for @user, url: user_registration_path, method: :post do |f| %>
-        <%= f.input :email, placeholder:current_user.email %>
-        <%= f.input :password, placeholder:"*********" %>
-        <%= f.input :full_name, placeholder:current_user.full_name %>
-        <%= f.input :age, placeholder:current_user.age %>
-        <%= f.input :gender, placeholder:current_user.gender %>
-        <%= f.input :location, placeholder:current_user.location %>
+     <%= simple_form_for @user, url: user_registration_path, method: :post do |f| %>
+        <%= f.input :email, placeholder:current_user.email, input_html: {readonly: true} %>
+        <%= f.input :password, placeholder:"*********", input_html: {readonly: true}%>
+        <%= f.input :full_name, placeholder:current_user.full_name, input_html: {readonly: true} %>
+        <%= f.input :age, placeholder:current_user.age, input_html: {readonly: true} %>
+        <%= f.input :gender, placeholder:current_user.gender, input_html: {readonly: true} %>
+        <%= f.input :location, placeholder:current_user.location, input_html: {readonly: true} %>
         <%= f.button :submit %>
       <% end %>
   </div>

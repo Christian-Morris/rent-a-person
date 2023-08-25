@@ -1,18 +1,25 @@
 
-
+<button><%= link_to "Back", :back, class: 'linkhome' %></button>
+<br />
 <div class="cards">
-  <h3><%= @user.full_name %></h3>
+<img src="https://img.freepik.com/photos-premium/beau-garcon_559599-256.jpg" style="width:100%">
+  <h3><strong><%= @user.full_name %></strong></h3>
     <div class="card-escort">
-      <img src="" />
       <div class="user-infos">
-          <p><%= @user.age %></p>
-          <p><%= @user.location %></p>
+          <p>Age: <%= @user.age %></p>
+          <p>City: <%= @user.location %></p>
       </div>
       <h2 class="card-review">
-            <% @user.reviews.each do |review| %>
-            <%= review.rating %>
-            <% end %>
+            <p>Reviews</p>
+            <div class="review-container">
+              <% @user.reviews.each do |review| %>
+              <p>By: <%= User.find(review.renter_id).full_name %>
+              <p>Rating: </p>
+                <% review.rating.times do %> <p>⭐️</p>
+                <% end %>
+              <p>Comment: <%= review.comment %></p>
+              <% end %>
+            </div>
       </h2>
 </div>
-
-<%= link_to "Book your companion", new_user_booking_path(@user) %>
+<button><%= link_to "Book your companion", new_user_booking_path(@user), class: 'linkcompanion'%></button>
