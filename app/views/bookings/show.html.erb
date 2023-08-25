@@ -3,7 +3,7 @@
 <div class="container-sm">
   <div class="card">
     <div class="card-body">
-      <h5 class="card-title">Booking succed ✅</h5>
+      <h5 class="card-title">Booking succeed ✅</h5>
       <p class="card-text"><small class="text-body-secondary">Reminder: </small></p>
       <p class="card-text" style="text-transform:capitalize;"><%= @booking.occasion.name %> with <%= User.find(@booking.escort_id).full_name %> in <%= @booking.location %> <br> date: <%= @booking.start_date %><br>
       Enjoy <%= User.find(@booking.renter_id).full_name %> !</p>
@@ -11,4 +11,3 @@
     <img src="https://i.enkiquotes.com/GYf3buZmQeSglNIxr-jVMzjRks4=/400x0//images/2016/08/e9d093dffde8655ff4957ada2c2595f6.png" class="img" alt="...">
   </div>
 </div>
-
