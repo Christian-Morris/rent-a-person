@@ -20,12 +20,36 @@
 // text-decoration: underline;
 // }
 
-.bt {
-  background-image: url(https://images.unsplash.com/photo-1516546453174-5e1098a4b4af?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2864&q=80);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  position: fixed;
-  width: 100%;
-  overflow: hidden;
+// .bt {
+//   background-image: url(https://images.unsplash.com/photo-1516546453174-5e1098a4b4af?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2864&q=80);
+//   background-repeat: no-repeat;
+//   background-position: center;
+//   background-size: cover;
+//   position: fixed;
+//   width: 100%;
+//   overflow: hidden;
+// }
+
+.container-sm {
+  padding-top: 120px;
+}
+
+.card-booking {
+  text-align: center;
+  font-family: 'Cinzel Decorative', cursive;
+  color: #E9E9E9;
+  font-size: 36px;
+}
+
+.text-body-two {
+  text-align: center;
+  font-family: 'Cinzel Decorative', cursive;
+  color: #E9E9E9;
+  font-size: 36px;
+}
+
+.card-title-booking {
+  font-family: 'Cinzel Decorative', cursive;
+  color: #E9E9E9;
+  font-size: 20px;
 }
