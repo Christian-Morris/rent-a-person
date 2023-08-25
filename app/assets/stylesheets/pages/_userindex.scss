@@ -1,0 +1,30 @@
+.img {
+  height: 150px;
+  object-fit: cover;
+  width: auto;
+  max-height: 150px;
+  object-position: 50% 50%;
+  position: center;
+}
+
+.user-infos-index {
+  background-color: rgb(223, 220, 217);
+  border-radius: 10px;
+  text-align: left;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+h4{
+text-align: center;
+}
+
+a{
+  color: black;
+}
+.cards-index{
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  color: color#0E0000;
+  background-color: #F4F4F4;
+  }

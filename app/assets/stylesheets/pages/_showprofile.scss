@@ -28,8 +28,8 @@ color: whitesmoke;
 }
 
 .linkhome {
-  text-decoration: none;
-color: whitesmoke;
+
+color: rgb(8, 8, 8);
 float: left;
 width: 100px;
 }
@@ -39,4 +39,18 @@ img {
 }
 h3{
   margin-top: 10px;
+}
+
+.rating {
+display: flex;
+justify-content: center;
+
+}
+.review-container {
+  text-align: center;
+  font-size: small;
+
+}
+.line{
+  text-align: center;
 }
