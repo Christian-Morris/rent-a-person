@@ -52,7 +52,6 @@
             <strong><%= booking.escort.full_name %></strong> to accompany you for a <%= booking.occasion.name %>. <br>
             Status: <%= booking.status %>
           </li>
-          <%= link_to "Approve", booking_update_status_path(booking, status: "approved"), data: { turbo_method: :patch } %>
         <% end %>
       <% end %>
     </ul></div>

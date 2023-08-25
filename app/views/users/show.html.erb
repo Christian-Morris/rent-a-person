@@ -1,27 +1,27 @@
 
-<%= link_to "Back", :back, class: 'linkhome' %>
+<%= link_to "<<", :back, class: 'linkhome text-white', style:"text-decoration: none;" %>
 <br />
-<div class="cards">
-<img src="https://img.freepik.com/photos-premium/beau-garcon_559599-256.jpg" style="width:100%">
-  <h3><strong><%= @user.full_name %></strong></h3>
-    <div class="card-escort">
-      <div class="user-infos">
-          <p>Age: <%= @user.age %></p>
-          <p>City: <%= @user.location %></p>
-      </div>
-      <h2 class="card-review">
-            <p>Reviews</p>
-            <div class="review-container">
-              <% @user.reviews.each do |review| %>
-              <p>"<%= review.comment %>" <span class="text-black-50"><em>- <%= User.find(review.renter_id).full_name %></em></span></p>
-              <div class="rating">
-                  <p>Rating: </p>
-                  <% review.rating.times do %> <p>⭐️</p>
-                  <% end %>
+  <div class="cards card_bg_opacity">
+  <img src="https://img.freepik.com/photos-premium/beau-garcon_559599-256.jpg" style="width:100%">
+    <h3 class="pt-2"><strong><%= @user.full_name %></strong></h3>
+      <div class="card-escort">
+        <div class="user-infos">
+            <p>Age: <%= @user.age %></p>
+            <p>City: <%= @user.location %></p>
+        </div>
+        <h2 class="card-review">
+              <p>Reviews</p>
+              <div class="review-container">
+                <% @user.reviews.each do |review| %>
+                <p>"<%= review.comment %>" <span class="text-white-50"><em>- <%= User.find(review.renter_id).full_name %></em></span></p>
+                <div class="rating">
+                    <p>Rating: </p>
+                    <% review.rating.times do %> <p>⭐️</p>
+                    <% end %>
+                </div>
+                <p class="line">-----------</p>
+                <% end %>
               </div>
-              <p class="line">-----------</p>
-              <% end %>
-            </div>
-      </h2>
-</div>
-<button><%= link_to "Book your companion", new_user_booking_path(@user), class: 'linkcompanion'%></button>
+        </h2>
+  </div>
+  <button><%= link_to "Book your companion", new_user_booking_path(@user), class: 'linkcompanion'%></button>
