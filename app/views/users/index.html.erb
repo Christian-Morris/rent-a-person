@@ -1,10 +1,16 @@
 <h3>Select your companion for tonight</h3>
+<div class="cards-index">
+
+      <% @users.each do |user| %>
+        <div class="user-infos-index mb-1">
+          <img src="https://img.freepik.com/photos-premium/beau-garcon_559599-256.jpg" style="width:100%">
           <ul>
-            <% @users.each do |user| %>
-              <p><%= link_to user.full_name, user_path(user) %></p>
-              <li>Age: <%= user.age %></li>
-              <li>Gender: <%= user.gender %></li>
-              <li>Location: <%= user.location %></li>
-            <% end %>
+            <h4><strong><%= link_to user.full_name, user_path(user) %></strong></h4>
+            <li><strong>Age: </strong><%= user.age %></li>
+            <li><strong>Gender: </strong><%= user.gender %></li>
+            <li><strong>Location: </strong><%= user.location %></li>
           </ul>
-      </div>
+        </div>
+      <% end %>
+
+ </div>
