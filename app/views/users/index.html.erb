@@ -1,10 +1,10 @@
 <h3>People available to join you for your occasion:</h3>
-<div class="cards-index vh-100">
+<div class="cards-index vh-100 ">
 
       <% @users.each do |user| %>
-        <div class="user-infos-index mb-1">
+        <div class="user-infos-index mb-1 card_bg_opacity">
           <img class="imgindex" src="https://img.freepik.com/photos-premium/beau-garcon_559599-256.jpg" style="width:100%">
-          <ul>
+          <ul >
             <h4><strong><%= link_to user.full_name, user_path(user) %></strong></h4>
             <li><strong>Age: </strong><%= user.age %></li>
             <li><strong>Gender: </strong><%= user.gender %></li>
