@@ -14,13 +14,12 @@
   <p style="text-align: left">These listings are those that you have booked for others to join you:</p>
   <div class="card mb-3 border-success card_bg_opacity">
     <h2>Approved</h2>
-      <ul>
+      <ul style="list-style-type: none">
         <% current_user.bookings.each do |booking| %>
           <% if booking.status == "approved" %>
-            <li>
-              Location: <%= booking.location %> - <%= booking.date %> <br>
-              <strong><%= booking.escort.full_name %></strong> to accompany you for a <%= booking.occasion.name %>. <br>
-              Status: <%= booking.status %>
+            <li class="mb-2">
+              <strong><%= booking.escort.full_name %></strong> to accompany you for a <%= booking.occasion.name %>, in <%= booking.location %>, on <%= booking.date %>. <br>
+              Status: <em><%= booking.status %></em>
             </li>
           <% end %>
         <% end %>
@@ -29,13 +28,12 @@
 
   <div class="card mb-3 border-warning card_bg_opacity">
     <h2>Pending Review</h2>
-    <ul>
+    <ul style="list-style-type: none">
       <% current_user.bookings.each do |booking| %>
         <% if booking.status == "pending" %>
-          <li>
-            Location: <%= booking.location %> - <%= booking.date %><br>
-            <strong><%= booking.escort.full_name %></strong> to accompany you for a <%= booking.occasion.name %>. <br>
-            Status: <%= booking.status %>
+          <li class="mb-2">
+            <strong><%= booking.escort.full_name %></strong> to accompany you for a <%= booking.occasion.name %>, in <%= booking.location %>, on <%= booking.date %>. <br>
+            Status: <em><%= booking.status %></em>
           </li>
         <% end %>
       <% end %>
@@ -44,13 +42,12 @@
 
   <div class="card border-danger card_bg_opacity">
     <h2>Rejected</h2>
-    <ul>
+    <ul style="list-style-type: none">
       <% current_user.bookings.each do |booking| %>
         <% if booking.status == "rejected" %>
-          <li>
-            Location: <%= booking.location %> - <%= booking.date %><br>
-            <strong><%= booking.escort.full_name %></strong> to accompany you for a <%= booking.occasion.name %>. <br>
-            Status: <%= booking.status %>
+          <li class="mb-2">
+            <strong><%= booking.escort.full_name %></strong> to accompany you for a <%= booking.occasion.name %>, in <%= booking.location %>, on <%= booking.date %>. <br>
+            Status: <em><%= booking.status %></em>
           </li>
         <% end %>
       <% end %>
@@ -59,48 +56,55 @@
 
 
   <div class="tab-pane fade <%= "show active" if params[:tab] == "engagements" %>" id="engagements" role="tabpanel" aria-labelledby="engagements-tab">
-  <p>These listings are those that you are being rented for:</p>
-  <h2>Approved</h2>
-    <ul>
-      <% current_user.engagements.each do |booking| %>
-        <% if booking.status == "approved" %>
-          <li>
-            Location: <%= booking.location %> - <%= booking.date %><br>
-            <strong>You</strong> are accompanying <strong><%= booking.renter.full_name %></strong> to a <%= booking.occasion.name %>. <br>
-            Status: <%= booking.status %>
-          </li>
+   <p style="text-align: left">These listings are those that you are being rented for:</p>
+    <div class="card mb-3 border-success card_bg_opacity">
+      <h2>Approved</h2>
+      <ul style="list-style-type: none">
+        <% current_user.engagements.each do |booking| %>
+          <% if booking.status == "approved" %>
+            <li class="mb-2">
+              <strong>You</strong> are accompanying <strong><%= booking.renter.full_name %></strong> to a <%= booking.occasion.name %>, in <%= booking.location %>, on <%= booking.date %> <br>
+              Status: <%= booking.status %>
+            </li>
+          <% end %>
         <% end %>
-      <% end %>
-    </ul>
+      </ul>
+    </div>
 
-    <h2>Pending Review</h2>
-    <ul>
-      <% current_user.engagements.each do |booking| %>
-        <% if booking.status == "pending" %>
-          <li>
-            Location: <%= booking.location %> - <%= booking.date %><br>
-            <strong>You</strong> are accompanying <strong><%= booking.renter.full_name %></strong> to a <%= booking.occasion.name %>. <br>
-            Status: <%= booking.status %>
-          </li>
-          <%= link_to "Approve", booking_update_status_path(booking, status: "approved"), data: { turbo_method: :patch } %>
-          <%= link_to "Reject", booking_update_status_path(booking, status: "rejected"), data: { turbo_method: :patch } %>
+    <div class="card mb-3 border-warning card_bg_opacity">
+      <h2>Pending Review</h2>
+      <ul style="list-style-type: none">
+        <% current_user.engagements.each do |booking| %>
+          <% if booking.status == "pending" %>
+            <li class="mb-2">
+              <strong>You</strong> are accompanying <strong><%= booking.renter.full_name %></strong> to a <%= booking.occasion.name %>, in <%= booking.location %>, on <%= booking.date %> <br>
+              Status: <%= booking.status %>
+            </li>
+            <div class="row justify-content-center">
+              <%= link_to "Approve", booking_update_status_path(booking, status: "approved"), data: { turbo_method: :patch }, class: "btn btn-success card_bg_opacity mx-2", style: "width: 20%" %>
+              <%= link_to "Reject", booking_update_status_path(booking, status: "rejected"), data: { turbo_method: :patch }, class: "btn btn-danger card_bg_opacity mx-2", style: "width: 20%" %>
+            </div>
+          <% end %>
         <% end %>
-      <% end %>
-    </ul>
-    _____________________________________________________________________________________________________
-    <h2>Rejected</h2>
-    <ul>
-      <% current_user.engagements.each do |booking| %>
-        <% if booking.status == "rejected" %>
-          <li>
-            Location: <%= booking.location %> - <%= booking.date %><br>
-            <strong>You</strong> are accompanying <strong><%= booking.renter.full_name %></strong> to a <%= booking.occasion.name %>. <br>
-            Status: <%= booking.status %>
-          </li>
-          <%= link_to "Approve", booking_update_status_path(booking, status: "approved"), data: { turbo_method: :patch } %>
+      </ul>
+    </div>
+
+    <div class="card border-danger card_bg_opacity">
+      <h2>Rejected</h2>
+      <ul style="list-style-type: none">
+        <% current_user.engagements.each do |booking| %>
+          <% if booking.status == "rejected" %>
+            <li class="mb-2">
+              <strong>You</strong> are accompanying <strong><%= booking.renter.full_name %></strong> to a <%= booking.occasion.name %>, in <%= booking.location %>, on <%= booking.date %> <br>
+              Status: <%= booking.status %>
+            </li>
+            <div class="row justify-content-center">
+              <%= link_to "Approve", booking_update_status_path(booking, status: "approved"), data: { turbo_method: :patch }, class: "btn btn-success card_bg_opacity mx-2", style: "width: 20%" %>
+            </div>
+          <% end %>
         <% end %>
-      <% end %>
-    </ul>
+      </ul>
+    </div>
   </div>
 
 </div>
