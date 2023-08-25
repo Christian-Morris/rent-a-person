@@ -1,5 +1,5 @@
 
-<button><%= link_to "Back", :back, class: 'linkhome' %></button>
+<%= link_to "Back", :back, class: 'linkhome' %>
 <br />
 <div class="cards">
 <img src="https://img.freepik.com/photos-premium/beau-garcon_559599-256.jpg" style="width:100%">
@@ -13,11 +13,13 @@
             <p>Reviews</p>
             <div class="review-container">
               <% @user.reviews.each do |review| %>
-              <p>By: <%= User.find(review.renter_id).full_name %>
-              <p>Rating: </p>
-                <% review.rating.times do %> <p>⭐️</p>
-                <% end %>
-              <p>Comment: <%= review.comment %></p>
+              <p>"<%= review.comment %>" <span class="text-black-50"><em>- <%= User.find(review.renter_id).full_name %></em></span></p>
+              <div class="rating">
+                  <p>Rating: </p>
+                  <% review.rating.times do %> <p>⭐️</p>
+                  <% end %>
+              </div>
+              <p class="line">-----------</p>
               <% end %>
             </div>
       </h2>

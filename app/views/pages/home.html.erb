@@ -13,9 +13,9 @@
         <%= form.select :gender, ['male', 'female'] , {include_blank: "Gender"}, { class: "w-50 p-3" } %>
         <br>
         <div class="mb-2">
-          <%= form.date_field :opening_date, data: { controller: "datepicker" } %>
+          <%= form.date_field :date, data: { controller: "datepicker" } %>
         </div>
-
+      
         <div>
         <%= form.submit 'Connect', { class: "btn btn-primary btn-lg btn-block" } %>
         </div>
