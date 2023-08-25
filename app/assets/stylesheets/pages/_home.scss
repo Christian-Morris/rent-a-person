@@ -6,31 +6,38 @@
   color: white;
   margin: auto;
   height: 50%;
-  // height: 30px;
 }
 .filter {
-  background-color: rgb(39, 36, 36);
   margin-bottom: 20px;
   padding: 15px;
   border-radius: 10px;
-  border: solid 2px whitesmoke;
 }
 
 .bg-image {
-  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbJBtapFEkjdynpnq22aaQZkNxWgEgmuIWCg&usqp=CAU);
+  background-image: url(https://images.unsplash.com/photo-1467810563316-b5476525c0f9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  position: fixed;
+  width: 100%;
+  overflow: hidden;
 }
 
 .btn {
   border-radius: 10px;
   width: 50%;
+  background: rgb(10, 10, 43);
 }
 
 .filter-form {
-  margin: 50px;
+  margin: 40px;
 }
+
+.filter-form h3 {
+  font-family: 'Cinzel Decorative', cursive;
+  color: #E9E9E9;
+}
+
 .filter-form select {
   border-radius: 10px;
   margin-bottom: 10px;
@@ -41,7 +48,9 @@
 }
 
 .flatpickr-input {
-  width: 24%;
+  width: 25%;
   border-radius: 10px;
   padding: 10px;
 }
+
+// https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbJBtapFEkjdynpnq22aaQZkNxWgEgmuIWCg&usqp=CAU
